@@ -18,7 +18,6 @@ public class CatTest {
 
     @Test
     public void getSoundReturnMeow() {
-//        Feline feline = new Feline();
         Cat cat = new Cat(feline);
 
         String actual = cat.getSound();
