@@ -26,8 +26,13 @@ public class LionTest {
         assertEquals(lion.getKittens(), 0);
     }
     @Test
-    public void getdoesHaveManeReturnTrue() {
-        Lion lion = new Lion(feline);
+    public void getdoesHaveManeReturnTrue() throws Exception {
+        Lion lion = new Lion("Самец", feline);
         assertEquals(lion.doesHaveMane(), true);
+    }
+    @Test
+    public void getdoesHaveManeReturnFalse() throws Exception {
+        Lion lion = new Lion("Самка", feline);
+        assertEquals(lion.doesHaveMane(), false);
     }
 }
