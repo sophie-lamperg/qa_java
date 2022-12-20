@@ -1,6 +1,7 @@
 import com.example.Feline;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
@@ -26,6 +27,7 @@ public class FelineTest {
         int actual = feline.getKittens();
         assertEquals(actual, 1);
     }
+
     @Test
     public void getFoodForPredatorReturnList() throws Exception {
         List actual = feline.getFood("Хищник");
