@@ -1,8 +1,6 @@
 import com.example.Feline;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
@@ -15,27 +13,27 @@ public class FelineTest {
     @Test
     public void getFamilyReturnFeline() {
         String actual = feline.getFamily();
-        assertEquals(actual, "Кошачьи");
+        assertEquals("Кошачьи", actual);
     }
     @Test
     public void getKittensWithSecondParametersReturnSecond () {
         int actual = feline.getKittens(2);
-        assertEquals(actual, 2);
+        assertEquals(2, actual);
     }
     @Test
     public void getKittensWithoutParametersReturnOne () {
         int actual = feline.getKittens();
-        assertEquals(actual, 1);
+        assertEquals(1, actual);
     }
 
     @Test
     public void getFoodForPredatorReturnList() throws Exception {
         List actual = feline.getFood("Хищник");
-        assertEquals(actual, List.of("Животные", "Птицы", "Рыба"));
+        assertEquals(List.of("Животные", "Птицы", "Рыба"), actual);
     }
     @Test
     public void getFoodForHerbivorousReturnList() throws Exception {
         List actual = feline.getFood("Травоядное");
-        assertEquals(actual, List.of("Трава", "Различные растения"));
+        assertEquals(List.of("Трава", "Различные растения"), actual);
     }
 }

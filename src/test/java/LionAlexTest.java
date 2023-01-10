@@ -14,16 +14,16 @@ public class LionAlexTest {
     @Test
     public void getKittensReturnZero() throws Exception {
         LionAlex alex = new LionAlex(feline);
-        assertEquals(alex.getKittens(), 0);
+        assertEquals(0, alex.getKittens());
     }
     @Test
     public void getCityReturnNewYork() throws Exception {
         LionAlex alex = new LionAlex(feline);
-        assertEquals(alex.getCity(), "NewYork");
+        assertEquals("NewYork", alex.getCity());
     }
     @Test
     public void getHobbyReturnList() throws Exception {
         LionAlex alex = new LionAlex(feline);
-        assertEquals(alex.getHobby(), List.of("Есть", "Бегать", "Болтать"));
+        assertEquals(List.of("Есть", "Бегать", "Болтать"), alex.getHobby());
     }
 }
