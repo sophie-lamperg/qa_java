@@ -17,30 +17,31 @@ public class LionTest {
 
     @Test
     public void getFoodReturnList() throws Exception {
-        Lion lion = new Lion(feline);
+        Lion lion = new Lion("Самец", feline);
         lion.getFood();
         Mockito.verify(feline).getFood("Хищник");
     }
     @Test
-    public void getKittensReturnKittens() {
-        Lion lion = new Lion(feline);
+    public void getKittensReturnKittens() throws Exception {
+        Lion lion = new Lion("Самец", feline);
         assertEquals(0, lion.getKittens());
     }
     @Test
     public void getdoesHaveManeReturnTrue() throws Exception {
-        Lion lion = new Lion("Самец");
+        Lion lion = new Lion("Самец", feline);
         assertEquals(true, lion.doesHaveMane());
     }
     @Test
     public void getdoesHaveManeReturnFalse() throws Exception {
-        Lion lion = new Lion("Самка");
+        Lion lion = new Lion("Самка", feline);
         assertEquals(false, lion.doesHaveMane());
     }
     @Test
     public void lionsEatPredatorFood() throws Exception {
-        Feline feline = new Feline();
-        Lion lion = new Lion(feline);
-        List expected = List.of("Животные", "Птицы", "Рыба");
-        Assert.assertEquals(expected, lion.getFood());
+        Lion lion = new Lion("Самец", feline);
+        Mockito.when(feline.getFood("Хищник")).thenReturn(List.of("Животные", "Птицы", "Рыба"));
+        List<String> expected = List.of("Животные", "Птицы", "Рыба");
+        List<String> actual = lion.getFood();
+        assertEquals(expected, actual);
     }
 }

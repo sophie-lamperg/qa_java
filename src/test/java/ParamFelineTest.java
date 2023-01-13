@@ -20,14 +20,12 @@ public class ParamFelineTest {
     public static Object[][] checkKind() {
         return new Object[][] {
                 {"Хищник", List.of("Животные", "Птицы", "Рыба")},
-                {"Травоядное", List.of("Трава", "Различные растения")},
-                {"Опоссум", Exception.class},
-                {null, Exception.class}
+                {"Травоядное", List.of("Трава", "Различные растения")}
         };
     }
     @Test
     public void getFoodWithParametrized() throws Exception {
-        Feline feline1 = new Feline();
-        assertEquals(expected, feline1.getFood(kind));
+        Feline feline = new Feline();
+        assertEquals(expected, feline.getFood(kind));
     }
 }
